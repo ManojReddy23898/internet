@@ -1,13 +1,6 @@
 *** Variables ***
-&{IHP_LOCATOR}    
-&{IHP_VALIDATION}    hp_url=http://the-internet.herokuapp.com/
-${LOWER_LIMIT}    1
-
-*** Keywords ***
-Print All Links
-    [Documentation]    This keyword is used to print all links present on the page
-    ${count}    Get Element Count    xpath://ul/li
-    Log To Console    ${count}
-    :FOR    ${index}    IN RANGE    ${LOWER_LIMIT}     ${count}+1
-        \    ${links}    Get Text    xpath://ul/li[${index}]
-        \    Log To Console    ${links}     
+&{IHP_LINK}      
+...    link_1=Redirect Link     link_2=Dropdown    link_3=Drag and Drop
+&{IHP_VALIDATION}    
+...    hp_url_1=http://the-internet.herokuapp.com/    valid_1=redirector    valid_2=dropdown   
+...    valid_3=drag_and_drop
